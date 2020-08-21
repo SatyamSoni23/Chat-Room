@@ -4,8 +4,8 @@ This is an Android app that works as a client, and PHP using the Ratchet project
 <h3>Feactures</h2>
 <ul><li> Group Chat between same wifi network connected devices </li></ul>
 <h3>Installation</h3>
-<ul><li><b>Start Server</b></li></ul>
+<b>Start Server</b>
 php bin/server.php
-<br><br>
-<ul><li><b>Start Client</b></li></ul>
+<br>
+<b>Start Client</b>
 Run through Android Studio

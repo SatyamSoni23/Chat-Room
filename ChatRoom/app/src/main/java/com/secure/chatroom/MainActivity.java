@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         //Create OKhttp client Object
         OkHttpClient client = new OkHttpClient();
         //Build Okhttp request
-        Request request = new Request.Builder().url("ws://192.168.43.160:8080").build();
+        Request request = new Request.Builder().url("ws://echo.websocket.org").build();
         //Create Object of socket listener and pass Main Activity its parameter
         SocketListner socketListner = new SocketListner(this);
         //Create Web Socket Object pass
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         public SocketListner(MainActivity activity){
             this.activity = activity;
         }
+
 
         //Call when connection establish with the server
         @Override

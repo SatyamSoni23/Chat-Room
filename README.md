@@ -6,6 +6,7 @@ This is an Android app that works as a client, and PHP using the Ratchet project
 <h3>Installation</h3>
 <ul><li><b>Start Server</b></li></ul>
 php bin/server.php
+<br>
 <ul><li><b>Start Client</b></li></ul>
 Run through Android Studio
 <br>

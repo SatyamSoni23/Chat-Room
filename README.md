@@ -3,10 +3,9 @@
 This is an Android app that works as a client, and PHP using the Ratchet project work as a Server and JS Websocket.
 <h3>Feactures</h2>
 <ul><li> Group Chat between same wifi network connected devices </li></ul>
-<br>
 <h3>Installation</h3>
-<ul><li>Start Server</li></ul>
+<ul><li><b>Start Server</b></li></ul>
 php bin/server.php
-<ul><li>Start Client</li></ul>
+<ul><li><b>Start Client</b></li></ul>
 Run through Android Studio
 <br>

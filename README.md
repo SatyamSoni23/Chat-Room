@@ -1,8 +1,6 @@
 # 
-<h2>Chat-Room (Android)<h2>
-<br>
+<h2>Chat-Room (Android)</h2>
 This is an Android app that works as a client, and PHP using the Ratchet project work as a Server and JS Websocket.
-<br>
 <h3>Feactures</h2>
 <ul><li> Group Chat between same wifi network connected devices </li></ul>
 <br>

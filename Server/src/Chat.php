@@ -5,7 +5,7 @@ use Ratchet\ConnectionInterface;
 
 class Chat implements MessageComponentInterface {
 	
-	private $clients;
+	protected $clients;
     //Inside constructer class we will instantiate client object
 	public function __construct(){
 		$localIP = getHostByName(getHostName());
@@ -17,10 +17,13 @@ class Chat implements MessageComponentInterface {
     //Call when their is any connection in the socket
 	public function onOpen(ConnectionInterface $conn) {
         $this->clients[] = $conn;
-		echo "New Connection";
+		echo "New connection! ({$conn->resourceId})\n";
     }
 	//Call when connection sent any message to the server
     public function onMessage(ConnectionInterface $from, $msg) {
+		$numRecv = count($this->clients) - 1;
+		 echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
+            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
         //Whenever their is new message we will echo that message
 		//to every single client that has been connected to the server
 		foreach($this->clients as $client){
@@ -33,10 +36,12 @@ class Chat implements MessageComponentInterface {
     }
 	//Call when the connecton closes
     public function onClose(ConnectionInterface $conn) {
-		echo "Connection Closed";
+		$this->clients->detach($conn);
+		echo "Connection {$conn->resourceId} has disconnected\n";
     }
 	//Call when their is any error occurs
     public function onError(ConnectionInterface $conn, \Exception $e) {
-		echo $e->getMessage();
+		echo "An error has occurred: {$e->getMessage()}\n";
+        $conn->close();
     }
 }
